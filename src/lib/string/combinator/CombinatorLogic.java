@@ -149,7 +149,6 @@ public class CombinatorLogic {
   public CombinatorLogic(String string, String[] array) {
     codeSb = new StringBuilder(string);
     List<String[]> newList = new ArrayList<>();
-    // 後で修正する箇所
     newList.addAll(Arrays.asList(INITIAL_COMBINATORS));
     if (array != null) {
       newList.add(formatCombinatorsArray(array));
