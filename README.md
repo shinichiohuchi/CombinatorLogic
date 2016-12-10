@@ -1,4 +1,4 @@
-#CombinatorLogic.jar マニュアル
+#combinator-logic.jar マニュアル
 
 バージョン 1.4  
 作者 大内真一  
