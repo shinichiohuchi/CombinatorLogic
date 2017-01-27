@@ -48,10 +48,12 @@ CLCode)を計算するにあたって、文字列の並び替え処理などに�
 例えば計算させたいCLCode"Sxyz"が存在するとします。  
 これをこのライブラリを使用して計算をさせる場合、  
 
-    String clcode = "Sxyz";
-    CombinatorLogic cl = new CombinatorLogic(clcode);
-    cl.step();
-    System.out.println(cl.getValue());
+```java
+String clcode = "Sxyz";
+CombinatorLogic cl = new CombinatorLogic(clcode);
+cl.step();
+System.out.println(cl.getValue());
+```
 
 とすることで、先頭のコンビネータが計算を行った1ステップ後の計算結果を標準出力す
 ることができます。
@@ -59,12 +61,14 @@ CLCode)を計算するにあたって、文字列の並び替え処理などに�
 これが例えば非常に長い文字列であった場合に、計算不可能になって終了するまでス
 テップを進め、結果を取得したい場合は、
 
-    String clcode = "SKIBCSKIBC...";
-    CombinatorLogic cl = new CombinatorLogic(clcode);
-    while (cl.canStep()) {
-      cl.step();
-    }
-    System.out.println(cl.getValue());
+```java
+String clcode = "SKIBCSKIBC...";
+CombinatorLogic cl = new CombinatorLogic(clcode);
+while (cl.canStep()) {
+  cl.step();
+}
+System.out.println(cl.getValue());
+```
 
 とすることで、無限ループに陥るCLCodeでない限り、計算が終了するまでステップを実
 行し、結果を出力します。
@@ -98,14 +102,16 @@ CLCode)を計算するにあたって、文字列の並び替え処理などに�
 
 上記のフォーマットを適用した例は次のようになります。  
 
-    # Sabc -> ac(bc)
-    S, 3, 02(12)
+```csv
+# Sabc -> ac(bc)
+S, 3, 02(12)
 
-    # チャーチ数の0, <zero>をそのまま(KI)に置換
-    <zero>, 0, (KI)
+# チャーチ数の0, <zero>をそのまま(KI)に置換
+<zero>, 0, (KI)
 
-    # 2つ目の数値を省略した場合は、0を挿入した場合と同じ置換処理を行う
-    <0>, (KI)
+# 2つ目の数値を省略した場合は、0を挿入した場合と同じ置換処理を行う
+<0>, (KI)
+```
 
 このフォーマットは','で区切った配列として取り込まれます。  
 同様に、List<String[]>でコンビネータを追加する場合は、上記のフォーマットと同様に  
